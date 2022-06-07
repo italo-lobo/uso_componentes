@@ -118,8 +118,8 @@ function createGrid(id, url, entityName, columns, filterFunction, query) {
 
 function reloadGrid(id, reload = false) {
     if (reload) {
-        $("#" + id).DataTable().ajax.reload(null, false);
+        jQuery("#" + id).DataTable().ajax.reload(null, false);
     } else {
-        $("#" + id).DataTable().page(0).draw();
+        jQuery("#" + id).DataTable().page(0).draw();
     }
 }
