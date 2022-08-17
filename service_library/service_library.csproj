@@ -1,7 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\service_library\service_library.csproj" />
     <ProjectReference Include="..\transversal_library\transversal_library.csproj" />
   </ItemGroup>
 

@@ -8,6 +8,7 @@ using mvc_project.Models;
 using mvc_project.Models.Common;
 using mvc_project.Models.Login;
 using mvc_project.Models.Usuario;
+using service_library;
 
 namespace mvc_project.Controllers
 {
@@ -56,6 +57,9 @@ namespace mvc_project.Controllers
 
         public IActionResult Editar(long idUsuario)
         {
+            transversal_library.IUserService userService = new UserService();
+            userService.GetUser("", "");
+
             LoginModel loginModel = HttpContext.Session.Get<LoginModel>("UsuarioLogueado");
 
             if(loginModel == null)
@@ -71,7 +75,7 @@ namespace mvc_project.Controllers
             }
 
             UsuarioModel usuarioModel = list.Find(x => x.id == idUsuario);
-
+            
             UsuarioViewModel usuarioViewModel = new UsuarioViewModel 
             {
                 accion = CodigosAccion.Editar,
